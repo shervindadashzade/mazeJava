@@ -16,16 +16,21 @@ public class Home {
 
     @Override
     public String toString() {
-        return Integer.toString(this.state);
+        if(state == 0) {
+            return "EMPTY";
+        }
+        if(state == 1){
+            return "START";
+        }
+        if(state == 2){
+            return  "END";
+        }
+        if(state == 3){
+            return "WALL";
+        }
+        if(state == 4){
+            return "VISITED";
+        }
+        return "WTF?!";
     }
-}
-class Direction{
-    //VISITED
-    //WALL
-    //UNVISTED
-    public static final int UNVISITED = 0;
-    public static final int WALL =1;
-    public static final int VISITED =2;
-    public static final int NULL = 3;
-    public int state = 0;
 }

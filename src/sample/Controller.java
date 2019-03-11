@@ -102,7 +102,17 @@ public class Controller {
             public void handle(MouseEvent event) {
                 Stack stack;
                 stack = gamePlane.processMaze();
-                System.out.println(stack.getSize());
+                if(stack == null){
+                    selectState.setText("مسیر پیدا نشد");
+                }else {
+                    selectState.setText("مسیری به طول "+stack.getSize()+"یافت شد");
+                    System.out.println(stack.getSize());
+                    for (Home home : stack.getHomes()) {
+                        HBox box = (HBox) vBox.getChildren().get(home.y);
+                        Rectangle rect = (Rectangle) box.getChildren().get(home.x);
+                        rect.setFill(Color.BLUEVIOLET);
+                    }
+                }
             }
         });
         Stage selectStage = Main.selectStage;

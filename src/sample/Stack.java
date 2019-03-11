@@ -19,4 +19,7 @@ public class Stack {
     public int getSize(){
         return array.size();
     }
+    public ArrayList<Home> getHomes(){
+        return array;
+    }
 }
